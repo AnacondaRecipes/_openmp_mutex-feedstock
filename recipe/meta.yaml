@@ -1,6 +1,5 @@
 {% set name = "_openmp_mutex" %}
 {% set version = "4.5" %}
-{% set build = "2" %}
 
 package:
   name: {{ name|lower }}
@@ -10,8 +9,7 @@ source:
   path: .
 
 build:
-  number: {{ build }}
-  string: {{ build }}_kmp_llvm
+  string: 1_llvm
   skip: true  # [not linux]
   always_include_files:
     # this major version has to match the libgomp version from gcc
@@ -28,9 +26,12 @@ build:
 
 requirements:
   host:
+    - llvm-openmp >=9.0.1
   run:
     - llvm-openmp >=9.0.1
-    - _libgcc_mutex {{ _libgcc_mutex }}  # [linux64 or ppc64le]
+    # the selector here serves no real purpose, but conda appears
+    # to error without it, so here we are
+    - _libgcc_mutex {{ _libgcc_mutex }}  # [linux]
 
 test:
   requires:
@@ -53,6 +54,11 @@ about:
   home: https://github.com/conda-forge/openmp-feedstock
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/49247
+    reason: Dependency for blas
+  recipe-maintainers:
+    - ianaobi
   recipe-maintainers:
     - isuruf
     - beckermr
