@@ -54,6 +54,11 @@ about:
   home: https://github.com/conda-forge/openmp-feedstock
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/49247
+    reason: Dependency for blas
+  recipe-maintainers:
+    - ianaobi
   recipe-maintainers:
     - isuruf
     - beckermr
