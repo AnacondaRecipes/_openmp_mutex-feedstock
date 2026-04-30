@@ -1,11 +1,5 @@
-version:
-- 4.5
-- 4.5         # [win]
-- 2.0         # [win]
-openmp_impl:
-- llvm
-- intel       # [win]
-- msvc        # [win]
-zip_keys:
-- - version
-  - openmp_impl
+openmp_mutex_impl:
+  - gnu    # [linux]
+  - llvm
+  - intel  # [x86_64]
+  - msvc   # [win]
