@@ -2,8 +2,8 @@
 
 package:
   name: _openmp_mutex
-  # Needs to be greater than https://github.com/AnacondaRecipes/ctng-compilers-feedstock/blob/main-15/recipe/conda_build_config.yaml#L36
-  version: 5.0
+  # Needs to be greater than 5.1 that's already on main from another feedstock.
+  version: 6.0
 
 build:
   number: {{ build_number }}
