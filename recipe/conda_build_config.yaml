@@ -1,5 +1,21 @@
+version:
+  # Keep these aligned with the historical OpenMP runtime markers rather than
+  # inventing a package version that looks like a newer OpenMP specification.
+  - 4.5      # [linux]
+  - 5.1      # [linux]
+  - 4.5      # [linux or osx or win]
+  - 4.5      # [linux and x86_64]
+  - 4.5      # [win and x86_64]
+  - 2.0      # [win]
+
 openmp_mutex_impl:
-  - gnu    # [linux]
-  - llvm
-  - intel  # [x86_64]
-  - msvc   # [win]
+  - gnu      # [linux]
+  - gnu      # [linux]
+  - llvm     # [linux or osx or win]
+  - intel    # [linux and x86_64]
+  - intel    # [win and x86_64]
+  - msvc     # [win]
+
+zip_keys:
+  - - version
+    - openmp_mutex_impl
