@@ -1,6 +1,8 @@
 version:
   # Keep these aligned with the historical OpenMP runtime markers rather than
   # inventing a package version that looks like a newer OpenMP specification.
+  # The 5.1 GNU build exists because main already shipped 5.1_gnu; build number
+  # 8 supersedes it without forcing unrelated LLVM/Intel/MSVC variants to 5.1.
   - 4.5      # [linux]
   - 5.1      # [linux]
   - 4.5      # [linux or osx or win]
@@ -9,6 +11,8 @@ version:
   - 2.0      # [win]
 
 openmp_mutex_impl:
+  # Zipped with version below to avoid rendering nonsensical combinations like
+  # 5.1_llvm or 2.0_gnu.
   - gnu      # [linux]
   - gnu      # [linux]
   - llvm     # [linux or osx or win]
