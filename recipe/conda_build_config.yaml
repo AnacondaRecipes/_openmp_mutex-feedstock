@@ -1,8 +1,10 @@
 version:
   # Keep these aligned with the historical OpenMP runtime markers rather than
   # inventing a package version that looks like a newer OpenMP specification.
-  # The 5.1 GNU build exists because main already shipped 5.1_gnu; build number
-  # 8 supersedes it without forcing unrelated LLVM/Intel/MSVC variants to 5.1.
+  # The 5.1 GNU build exists because main already shipped 5.1_gnu. Build number
+  # 52 supersedes the highest historical GNU build seen in main, including
+  # linux-aarch64's 5.1-51_gnu, without forcing unrelated LLVM/Intel/MSVC
+  # variants to 5.1.
   - 4.5      # [linux]
   - 5.1      # [linux]
   - 4.5      # [linux or osx or win]
