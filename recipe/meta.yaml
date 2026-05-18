@@ -41,8 +41,14 @@ test:
 about:
   summary: Mutex metapackage for selecting a single OpenMP runtime family
   license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE
   home: https://github.com/AnacondaRecipes/_openmp_mutex-feedstock
+  description: |
+    _openmp_mutex is a lightweight selector package used to keep environments
+    on a single OpenMP runtime family. Variants use family-specific build
+    strings so runtime packages can constrain solver behavior without this
+    package owning the runtime libraries themselves.
 
 extra:
   recipe-maintainers:
