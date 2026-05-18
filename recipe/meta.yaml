@@ -20,9 +20,8 @@ build:
     - lib/libgomp.dylib    # [osx and openmp_mutex_impl == "llvm"]
   run_exports:
     # Packages that host-depend on the mutex should carry the same selected
-    # mutex forward. New compiler/runtime packages add stricter *_gnu/*_llvm
-    # build-string constraints in their own run_exports.
-    - {{ pin_subpackage('_openmp_mutex', max_pin=None) }}
+    # mutex family forward instead of solving to a newer different family.
+    - {{ pin_subpackage('_openmp_mutex', max_pin=None) }} *_{{ openmp_mutex_impl }}
 
 test:
   commands:
